@@ -9,13 +9,15 @@ const CLAVE = "mibanco-db-v1";
 const BancoContext = createContext(null);
 
 function cargar() {
+  const semilla = crearSeed();
   try {
     const guardado = JSON.parse(localStorage.getItem(CLAVE));
-    if (guardado?.usuarios?.length) return guardado;
+    // Si se editaron los usuarios en seed.js, la firma cambia y se descartan los datos guardados
+    if (guardado?.usuarios?.length && guardado.firma === semilla.firma) return guardado;
   } catch {
     // datos corruptos o storage bloqueado: arrancamos con la semilla
   }
-  return crearSeed();
+  return semilla;
 }
 
 const $ = (n) => `$ ${formatearMonto(n)}`;
@@ -361,20 +363,6 @@ export function BancoProvider({ children }) {
     );
   };
 
-  const restablecerDatos = () => {
-    const semilla = crearSeed();
-    const sigueLogueado = semilla.usuarios.some((u) => u.id === estado.sesionId);
-    setEstado(
-      registrar(
-        { ...semilla, sesionId: sigueLogueado ? estado.sesionId : null },
-        actor,
-        "Restableció los datos de demostración",
-        "",
-        "admin"
-      )
-    );
-  };
-
   const valor = {
     usuarios,
     auditoria,
@@ -393,7 +381,6 @@ export function BancoProvider({ children }) {
     ajustarSaldo,
     resolverTransferencia,
     guardarConfig,
-    restablecerDatos,
   };
 
   return <BancoContext.Provider value={valor}>{children}</BancoContext.Provider>;

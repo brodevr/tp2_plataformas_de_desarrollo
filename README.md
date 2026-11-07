@@ -34,7 +34,7 @@ En el login hay botones para completar los datos de demo.
 - Ficha de cada cliente con sus movimientos y **ajuste manual de saldo** (acreditar o debitar con motivo).
 - Revisión de transferencias retenidas: aprobar (se acredita al destino) o rechazar (se devuelve el dinero).
 - Auditoría: registro de accesos, operaciones y acciones administrativas, con filtros y búsqueda.
-- Configuración del límite de revisión y botón para restablecer los datos de demo.
+- Configuración del límite de revisión.
 
 ## Estructura
 

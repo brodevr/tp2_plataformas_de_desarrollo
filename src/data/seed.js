@@ -45,7 +45,7 @@ export function crearSeed() {
       ...CLIENTE_BASE,
       id: "u2",
       nombre: "Carlos Méndez",
-      email: "user@demo.com",
+      email: "carlos@demo.com",
       password: "abcdef",
       rol: "cliente",
       estado: "activo",
@@ -167,6 +167,8 @@ export function crearSeed() {
   ];
 
   return {
+    // huella de los usuarios iniciales: si cambian acá, la app descarta los datos guardados
+    firma: JSON.stringify(usuarios.map((u) => [u.id, u.nombre, u.email, u.password, u.rol, u.estado])),
     usuarios,
     auditoria,
     config: { limiteRevision: 150000 },

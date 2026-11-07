@@ -5,7 +5,8 @@ import Icon from "../components/Icon";
 import { useBanco } from "../context/BancoContext";
 
 const DEMOS = [
-  { texto: "Cliente demo", email: "user@demo.com", password: "abcdef" },
+  { texto: "Cliente demo Carlos", email: "carlos@demo.com", password: "abcdef" },
+  { texto: "Cliente demo Martina", email: "martina@demo.com", password: "123456" },
   { texto: "Administrador demo", email: "admin@demo.com", password: "123456" },
 ];
 

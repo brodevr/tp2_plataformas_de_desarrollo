@@ -17,7 +17,7 @@ const INICIO = { cliente: "home", admin: "panel" };
 
 const TITULOS = {
   home: (s) => [`Hola, ${s.nombre.split(" ")[0]}`, "Bienvenido de nuevo"],
-  transferir: () => ["Transferir", "Enviá dinero a un alias, CBU o CVU"],
+  transferir: () => ["Transferir", "Enviá dinero a un Alias o CBU"],
   movimientos: () => ["Movimientos", "Historial completo de tu cuenta"],
   alias: () => ["Alias y CBU", "Compartí tus datos para recibir transferencias"],
   panel: (s) => [`Hola, ${s.nombre.split(" ")[0]}`, "Resumen general del banco"],
