@@ -1,0 +1,43 @@
+/* ---------- Tokens de diseño (misma paleta que la app Android) ---------- */
+:root {
+  --navy: #0a3d62;
+  --navy-dark: #0d4a75;
+  --teal: #1abc9c;
+  --gold: #f5c469;
+  --bg-screen: #f0f3f4;
+  --surface: #ffffff;
+  --border: #e9edef;
+  --icon-bg: #f2f6f7;
+  --text-secondary: #7a8b94;
+  --text-muted: #8e9da5;
+  --rojo: #c0392b;
+  --rojo-suave: #fde8e8;
+  --ambar: #b7791f;
+  --ambar-suave: #fdf3e1;
+  --sombra: 0 8px 30px rgba(10, 61, 98, 0.12);
+}
+
+body { color: var(--navy); background: var(--bg-screen); }
+
+/* ---------- Avatar ---------- */
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 700; flex: none; }
+.avatar.admin { background: var(--gold); color: var(--navy); }
+.avatar.grande { width: 64px; height: 64px; font-size: 22px; }
+
+/* ---------- Botones ---------- */
+.btn { padding: 12px 18px; border: 0; border-radius: 8px; color: #fff; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: transform .1s, filter .15s, background .15s; }
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: scale(.98); }
+.btn:disabled { opacity: .45; cursor: default; filter: none; transform: none; }
+.btn-navy { background: var(--navy); }
+.btn-teal { background: var(--teal); }
+.btn-peligro { background: var(--rojo); }
+
+.link { padding: 0; border: 0; background: transparent; color: var(--teal); font-size: 13px; font-weight: 600; }
+.link:hover { text-decoration: underline; }
+
+/* ---------- Campos ---------- */
+.input { width: 100%; padding: 12px 14px; border: 0; border-radius: 8px; background: var(--surface); font-size: 15px; color: var(--navy); font-family: inherit; outline: none; transition: border-color .15s, box-shadow .15s; }
+.input-borde { border: 1px solid var(--border); }
+.input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(26, 188, 156, .15); }
+select.input { cursor: pointer; }

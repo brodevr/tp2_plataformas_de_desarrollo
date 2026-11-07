@@ -1,0 +1,3 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #dfe5e8; font-family: system-ui, "Segoe UI", sans-serif; }
+button { font-family: inherit; cursor: pointer; }
